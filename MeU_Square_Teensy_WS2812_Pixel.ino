@@ -77,7 +77,13 @@ void setup()
  
   //Initialize screen and reset to zero
   matrix.begin();
-  matrix.setBrightness(50);
+  
+  //WARNING! DO NOT SET THIS VALUE PAST 40 OTHERWISE YOU WILL DAMAGE THE LEDS!!!
+  //Brightness determines the amount of current drawn and at full brightness, these LEDS can draw
+  //up to 15A!!! So be sure this value doesn't go past 40. 
+  
+  matrix.setBrightness(40);
+  
   matrix.fillScreen(0);
   matrix.show();
   
