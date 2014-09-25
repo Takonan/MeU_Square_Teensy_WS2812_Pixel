@@ -64,6 +64,9 @@ boolean ReadyToDraw = false;
 boolean ImageLoaded = false;
 String input_line;
 
+// The Bluetooth Mate Silver is connected to Pins 0 and 1 of Teensy which are accessed through the Hardware Serial Library
+// In this case Uart is the Serial port for bluetooth
+
 HardwareSerial Uart = HardwareSerial();
 
 void setup()
