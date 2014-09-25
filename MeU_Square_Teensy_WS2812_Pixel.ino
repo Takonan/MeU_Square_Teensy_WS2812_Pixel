@@ -1,3 +1,45 @@
+//////////////////////////////////////////////////////////////////////////
+//Filenames: MeU_Square_Teensy_WS2812_Pixel.ino
+//Authors: Robert Tu
+//Date Created: June 5, 2014
+//Notes:
+/*
+  PLEASE NOTE: This version of MeU Square uses the Teensy 3.1 microcontroller which
+  is Arduino compatible. You will need to download the Teensyduino software
+  first before being able to program MeU Long.
+  
+  You can download it here:
+  http://www.pjrc.com/teensy/teensyduino.html
+  
+  Once Teensyduino is installed, the Teensy board option will become available
+  under the Tools Menu in the Arduino IDE
+  
+  Also the Adafruit NeoPixel Library had to be modified in order to work with
+  this version of MeU. Please be sure to install the correct version of
+  the NeoPixel library that came with this version of MeU.
+  
+  This is the Arduino file that controls the MeU panel. It utilizes Adafruit's
+  NeoPixel and GFX libraries to control the WS2812 LEDs.
+  
+  In the main loop the program waits for a serial message sent from a mobile
+  device via bluetooth. The message is then parsed for specific commands. 
+  
+  The message protocol is as follows:
+  
+  "RRGGBB..nn"
+  
+  where "RR" is Red colour data, "GG" is green colour data and "BB" is blue coloured 
+  data in string hex format. 
+  
+  Since MeU Square has a resolution of 16x16, only 1536 characters can be sent over:
+  (16x16 = 256 * 3 colours * 2 characters per colour = 1536 characters)
+  
+  Most image files can be broken down into RGB data and sent over to the panel
+  Image files must be 16x16 pixels
+  
+*/
+
+//////////////////////////////////////////////////////////////////////////
 
 #include <avr/pgmspace.h> // to use PROGMEM
 // Adafruit_NeoMatrix example for single NeoPixel Shield.
